@@ -2,4 +2,5 @@
 
 int main(void) {
     puts("Hello, World!");
+    puts("This is Cetria!");
 }
