@@ -3,9 +3,9 @@
 
 void print_pixel(Point visual)
 {
-	printf("\033[%d;%dm", visual.background, visual.foreground);
+	printf("\033[%d;%dm", visual.background + 10, visual.foreground);
 	printf("%c", visual.character);
-	printf("\033[%d;%dm", DEFAULT, DEFAULT);
+	printf("\033[%d;%dm", DEFAULT + 10, DEFAULT);
 }
 int get_color_from_keypress(char symbol)
 {
@@ -53,51 +53,56 @@ int get_color_from_keypress(char symbol)
 
 	return color;
 }
-char* convert_color_to_string(int color)
+void convert_color_to_string(int color, char* string)
 {
-	char string[7] = "";
-
 	switch (color)
 	{
 	case 39:
+	case 49:
 	{
 		strcpy(string, "DEFAULT");
 	}break;
 	case 30:
+	case 40:
 	{
 		strcpy(string, "BLACK");
 	}break;
 	case 31:
+	case 41:
 	{
 		strcpy(string, "RED");
 	}break;
 	case 32:
+	case 42:
 	{
 		strcpy(string, "GREEN");
 	}break;
 	case 33:
+	case 43:
 	{
 		strcpy(string, "YELLOW");
 	}break;
 	case 34:
+	case 44:
 	{
 		strcpy(string, "BLUE");
 	}break;
 	case 35:
+	case 45:
 	{
 		strcpy(string, "PURPLE");
 	}break;
 	case 36:
+	case 46:
 	{
 		strcpy(string, "CYAN");
 	}break;
 	case 37:
+	case 47:
 	{
 		strcpy(string, "WHITE");
 	}break;
 	}
-
-	return string;
 }
 int convert_string_to_color(char string)
 {
