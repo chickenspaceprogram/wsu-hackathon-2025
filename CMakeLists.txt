@@ -7,6 +7,8 @@ project(
     LANGUAGES C
 )
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 add_subdirectory(extern)
 add_subdirectory(src)
 
