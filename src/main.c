@@ -5,4 +5,6 @@ int main(void) {
     puts("This is Cetria!");
     puts("This is Sydnee :)");
     puts("This is Bakenflake");
+
+    puts("my test");
 }
