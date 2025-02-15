@@ -1,3 +1,0 @@
-[submodule "extern/ctty"]
-	path = extern/ctty
-	url = git@github.com:chickenspaceprogram/ctty
