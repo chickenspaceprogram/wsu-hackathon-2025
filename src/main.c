@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "colors.h"
 
 int main(void) {
     puts("Hello, World!");

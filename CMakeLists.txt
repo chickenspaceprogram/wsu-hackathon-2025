@@ -12,4 +12,6 @@ add_subdirectory(src)
 
 add_executable(hackathon
     src/main.c
-)
+ "src/colors.h" "src/colors.c" "src/structs.h")
+
+target_link_libraries(hackathon PUBLIC ctty)
