@@ -7,6 +7,7 @@ project(
     LANGUAGES C
 )
 
+add_subdirectory(extern)
 add_subdirectory(src)
 
 add_executable(hackathon

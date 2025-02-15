@@ -1,0 +1,53 @@
+All values here are in hex.
+This is here for chickenspaceprogram to reference, feel free to ignore it.
+
+Windows:
+
+BACKSPACE:      08
+DEL:            EO 53
+
+UP_ARROW:       E0 48
+DOWN_ARROW:     E0 50
+LEFT_ARROW:     E0 4B
+RIGHT_ARROW:    E0 4D
+
+ESC:            1B
+
+F1:             00 3B
+F2:             00 3C
+F3:             00 3D
+F4:             00 3E
+F5:             00 3F
+F6:             00 40
+F7:             00 41
+F8:             00 42
+F9:             00 43
+F10:            00 44
+F11:
+F12:            E0 86
+
+
+MacOS/*nix:
+
+BACKSPACE:      7F
+DEL:            1B 5B 33 7E
+
+UP_ARROW:       1B 5B 41
+DOWN_ARROW:     1B 5B 42
+LEFT_ARROW:     1B 5B 44
+RIGHT_ARROW:    1B 5B 43
+
+ESC:            1B
+
+F1:             1B 4F 50
+F2:             1B 4F 51
+F3:             1B 4F 52
+F4:             1B 4F 53
+F5:             1B 5B 31 35 7E
+F6:             1B 5B 31 37 7E
+F7:             1B 5B 31 38 7E
+F8:             1B 5B 31 39 7E
+F9:             1B 5B 32 30 7E
+F10:            1B 5B 32 31 7E
+F11:            
+F12:            1B 5B 32 34 7E
