@@ -13,6 +13,17 @@ typedef enum
 	PURPLE,
 	CYAN,
 	WHITE,
-}Color;
+} Color;
+
+typedef struct point {
+    char character;
+    Color foreground;
+    Color background;
+} Point;
+
+typedef struct position {
+    int x;
+    int y;
+} Position;
 
 #endif
