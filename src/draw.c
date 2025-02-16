@@ -1,10 +1,18 @@
 #include "draw.h"
-#include "stdlib.h"
+#include <stdlib.h>
 
 
 Point* make_array(int rows, int columns) {
 	//canvas array of points
 	Point* canvas = (Point*)malloc(sizeof(Point) * rows * columns);
+	if (canvas == NULL) {
+		puts("skill issue");
+	}
+	for (int i = 0; i < rows * columns; ++i) {
+		canvas[i].character = ' ';
+		canvas[i].background = DEFAULT;
+		canvas[i].foreground = DEFAULT;
+	}
 	
 	if (canvas == NULL) {
 		printf("Memory alloc failed. \n");

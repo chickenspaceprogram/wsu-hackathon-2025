@@ -4,10 +4,10 @@
 #ifdef _WIN32
 #   define ESC_CHAR '\xE0'
 #   define ENTER_CHAR '\r'
-#   define UP_CHAR 'H'
-#   define DOWN_CHAR 'P'
-#   define LEFT_CHAR 'K'
-#   define RIGHT_CHAR 'M'
+#   define UP_CHAR 'K' // H
+#   define DOWN_CHAR 'M' // P
+#   define LEFT_CHAR 'H' // K
+#   define RIGHT_CHAR 'P' // M
 #else
 #   define ESC_CHAR '\x1B'
 #   define ENTER_CHAR '\n'
