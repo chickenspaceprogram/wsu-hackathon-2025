@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include "save_and_load.h"
 #include <stdio.h>
 #include "hack_colors.h"
@@ -46,3 +47,29 @@ int main(void) {
     test_convert_string_to_color();
     // test_print_at_position();
 }
+=======
+#include <stdio.h>
+//#include "colors.h"
+#include "draw.h"
+#include "draw.c"
+#include "hack_colors.h"
+#include "structs.h"
+#include "cetria_test.h"
+#include "position-test.h"
+
+#include "draw.h"
+#include "menu.h"
+
+int main(void) {
+    puts("Hello, World!");
+    puts("This is Cetria!");
+    puts("This is Sydnee :)");
+    puts("This is Bakenflake");
+
+    Point* canvas = make_array(10, 10);
+    initialize_array(canvas, 10, 10);
+
+
+    puts("my test");
+}
+>>>>>>> ravensramen
