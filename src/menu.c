@@ -24,7 +24,10 @@ void displayMenu(void) {
 }
 
 int menu_input(void){
-	int choice = GETCH() - '0';
+	int choice = 0;
+	do {
+		choice = GETCH() - '0';
+	} while (choice < 1 || choice > 7);
 	return choice;
 }
 
