@@ -1,5 +1,7 @@
-#include "menu.h"
-#include "hack_menus.h"
+#include <stdio.h>
+//#include "colors.h"
+#include "draw.h"
+#include "draw.c"
 #include "hack_colors.h"
 #include "save_and_load.h"
 
@@ -18,4 +20,3 @@ int main(void) {
 
     return 0;
 }
-
