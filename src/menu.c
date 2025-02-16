@@ -64,11 +64,12 @@ void menu_actions(char choice) {
 		system("pause");
 		break; 
 	case 6:
+		system("cls");
 		print_help();
+		system("cls");
 		break;
 	case 7:
 		printf("Exiting...\n\n");
-		system("pause");
 		exit(0);
 		break;
 
