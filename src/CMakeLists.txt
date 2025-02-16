@@ -5,7 +5,7 @@ add_library(test-position position-test.h position-test.c)
 
 add_library(get-user-input get-user-input.c get-user-input.h)
 
-target_link_libraries(position PRIVATE ctty)
+target_link_libraries(position PUBLIC ctty)
 target_link_libraries(get-user-input PRIVATE ctty)
 target_link_libraries(test-position position)
 
