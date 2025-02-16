@@ -16,23 +16,23 @@ void print_color_menu(void)
 {
 	printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n", 201, 205, 209, 205, 203, 205, 209, 205, 203, 205, 209, 205, 203, 205, 209, 205, 187);
 	printf("%c%d%c", 186, 1, 179);
-	printf("\033[40;37m"); printf("B"); printf("\033[49;39m");//2 black on white
+	printf("\033[40;37m"); printf("B"); printf("\033[49;39m");//1 black on white
 	printf("%c%d%c", 186, 2, 179);
-	printf("\033[49;31m"); printf("%c", 219); printf("\033[49;39m");//3 red
+	printf("\033[49;31m"); printf("%c", 219); printf("\033[49;39m");//2 red
 	printf("%c%d%c", 186, 3, 179);
-	printf("\033[49;32m"); printf("%c", 219); printf("\033[49;39m");//4 green
+	printf("\033[49;32m"); printf("%c", 219); printf("\033[49;39m");//3 green
 	printf("%c%d%c", 186, 4, 179);
-	printf("\033[49;33m"); printf("%c", 219); printf("\033[49;39m");//5 yellow
+	printf("\033[49;33m"); printf("%c", 219); printf("\033[49;39m");//4 yellow
 	printf("%c\n", 186);
 	printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n", 204, 205, 216, 205, 206, 205, 216, 205, 206, 205, 216, 205, 206, 205, 216, 205, 185);
 	printf("%c%d%c", 186, 5, 179);
-	printf("\033[49;34m"); printf("%c", 219); printf("\033[49;39m");//6 blue
+	printf("\033[49;34m"); printf("%c", 219); printf("\033[49;39m");//5 blue
 	printf("%c%d%c", 186, 6, 179);
-	printf("\033[49;35m"); printf("%c", 219); printf("\033[49;39m");//7 purple
+	printf("\033[49;35m"); printf("%c", 219); printf("\033[49;39m");//6 purple
 	printf("%c%d%c", 186, 7, 179);
-	printf("\033[49;36m"); printf("%c", 219); printf("\033[49;39m");//8 cyan
+	printf("\033[49;36m"); printf("%c", 219); printf("\033[49;39m");//7 cyan
 	printf("%c%d%c", 186, 8, 179);
-	printf("\033[47;30m"); printf("W"); printf("\033[49;39m");//9 white on black
+	printf("\033[47;30m"); printf("W"); printf("\033[49;39m");//8 white on black
 	printf("%c\n%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n", 186, 200, 205, 207, 205, 202, 205, 207, 205, 202, 205, 207, 205, 202, 205, 207, 205, 188);
 }
 

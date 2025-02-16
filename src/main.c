@@ -1,11 +1,17 @@
 #include "menu.h"
 #include "hack_menus.h"
-#include <stdio.h>
+#include "hack_colors.h"
+#include "save_and_load.h"
+
 int main(void) {
-    displayMenu();
-    puts("symb menu");
-    print_symbol_menu();
-    puts("color menu");
-    print_color_menu();
+    int keep_running = 1;
+
+    do
+    {
+        displayMenu();
+
+    } while (keep_running == 1);
+
+    return 0;
 }
 
