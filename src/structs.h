@@ -21,9 +21,4 @@ typedef struct point {
     Color background;
 } Point;
 
-typedef struct position {
-    int x;
-    int y;
-} Position;
-
 #endif
