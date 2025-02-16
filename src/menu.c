@@ -5,6 +5,7 @@
 #include <ctty/text-modes.h>
 #include "hack_menus.h"
 #include "hack_colors.h"
+#include "save_and_load.h"
 
 void displayMenu(void) {
     puts(MODE_DRAW"lqqqqqqqqqqqqqqqqqqqqqk"MODE_DRAW_RESET);	
@@ -48,20 +49,20 @@ void menu_actions(char choice) {
 		break;
 	case 4:
 		outFile = fopen("art_save.csv", "w");
-		save_file(outFile, pixel, length);
+		//save_file(outFile, pixel, length);
 		fclose("outFile");
 		printf("Image Saved.\n\n");
 		system("pause");
 		break;
 	case 5:
 		inFile = fopen("art.csv", "r");
-		load_file(inFile, pixel, length);
+		//load_file(inFile, pixel, length);
 		fclose(inFile);
 		printf("Loaded an image.\n\n");
 		system("pause");
 		break; 
 	case 6:
-		//help
+		print_help();
 		break;
 	case 7:
 		printf("Exiting...\n\n");
@@ -71,7 +72,3 @@ void menu_actions(char choice) {
 
 	}
 }
-
-
-#include "menu.h"
-#include "structs.h"
