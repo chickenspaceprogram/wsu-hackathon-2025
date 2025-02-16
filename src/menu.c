@@ -7,6 +7,10 @@
 #include "hack_colors.h"
 #include "save_and_load.h"
 #include <ctty/screen.h>
+#include "get-user-input.h"
+#include "position.h"
+
+#define NUM_COLS 20
 
 void displayMenu(void) {
     puts(MODE_DRAW"lqqqqqqqqqqqqqqqqqqqqqqqqqk"MODE_DRAW_RESET);	
@@ -32,27 +36,69 @@ int menu_input(void){
 }
 
 
-void menu_actions(char choice) {
+void menu_actions(Point *points, Position *position, char choice) {
 	FILE* inFile = NULL;
 	FILE* outFile = NULL;
+	Input input = CHARACTER;
+	char chr = '\0';
 
 	switch (choice) {
 	case 1:
-		printf("Draw With Symbols\n");
+		CURSOR_UP(12);
+		printf("Draw With Symbols          \n");
 		print_symbol_menu();
-		//navigation and printing
+		while (input != ENTER) {
+			input = get_user_input(&chr);
+			switch (input) {
+			case UP_ARROW: case DOWN_ARROW: case LEFT_ARROW: case RIGHT_ARROW:
+				move_cursor(points, position, input);
+				break;
+			case CHARACTER:
+				points[(position->row - 1) * NUM_COLS + (position->col - 1)].character = get_symbol_from_keypress(chr);
+				printf(MODE_INVERSE);
+				print_at_position(points[(position->row - 1) * NUM_COLS + (position->col - 1)], position->row, position->col);
+				printf(MODE_INVERSE_RESET);
+				break;
+			}
+		}
 		break;
 	case 2:
-		printf("Foreground Color Select\n");
+		CURSOR_UP(12);
+		printf("Foreground Color Select    \n");
 		print_color_menu();
-		//navigation and printing
+		while (input != ENTER) {
+			input = get_user_input(&chr);
+			switch (input) {
+			case UP_ARROW: case DOWN_ARROW: case LEFT_ARROW: case RIGHT_ARROW:
+				move_cursor(points, position, input);
+				break;
+			case CHARACTER:
+				points[(position->row - 1) * NUM_COLS + (position->col - 1)].foreground = get_color_from_keypress(chr);
+				printf(MODE_INVERSE);
+				print_at_position(points[(position->row - 1) * NUM_COLS + (position->col - 1)], position->row, position->col);
+				printf(MODE_INVERSE_RESET);
+				break;
+			}
+		}
 		break;
 	case 3:
-		printf("Background Color Select\n");
+		CURSOR_UP(12);
+		printf("Background Color Select    \n");
 		print_color_menu();
-		//navigation and printing
-        PAUSE();
-        CLEAR_SCREEN();
+		while (input != ENTER) {
+			input = get_user_input(&chr);
+			switch (input) {
+			case UP_ARROW: case DOWN_ARROW: case LEFT_ARROW: case RIGHT_ARROW:
+				move_cursor(points, position, input);
+				break;
+			case CHARACTER:
+				points[(position->row - 1) * NUM_COLS + (position->col - 1)].background = get_color_from_keypress(chr);
+				printf(MODE_INVERSE);
+				print_at_position(points[(position->row - 1) * NUM_COLS + (position->col - 1)], position->row, position->col);
+				printf(MODE_INVERSE_RESET);
+				break;
+			}
+		}
 		break;
 	case 4:
 		outFile = fopen("art_save.csv", "w");
@@ -77,15 +123,14 @@ void menu_actions(char choice) {
         CLEAR_SCREEN();
 		break; 
 	case 6:
-		//print_help();
 		system("cls");
 		print_help();
 		system("cls");
 		break;
 	case 7:
 		printf("Exiting...\n\n");
-        PAUSE();
-        CLEAR_SCREEN();
+        	PAUSE();
+        	CLEAR_SCREEN();
 		exit(0);
 		break;
 
