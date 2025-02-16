@@ -14,6 +14,7 @@
 #define NUM_COLS 20
 
 void displayMenu(void) {
+	CURSOR_LEFT(2);
     puts(MODE_DRAW"lqqqqqqqqqqqqqqqqqqqqqqqqqk"MODE_DRAW_RESET);	
 	puts(MODE_DRAW"x"MODE_DRAW_RESET"       Main Menu:        "MODE_DRAW"x"MODE_DRAW_RESET);
 	puts(MODE_DRAW"x"MODE_DRAW_RESET"                         "MODE_DRAW"x"MODE_DRAW_RESET);
@@ -26,6 +27,7 @@ void displayMenu(void) {
 	puts(MODE_DRAW"x"MODE_DRAW_RESET"   7. Exit               "MODE_DRAW"x"MODE_DRAW_RESET);
 	puts(MODE_DRAW"x"MODE_DRAW_RESET"                         "MODE_DRAW"x"MODE_DRAW_RESET);
     puts(MODE_DRAW"mqqqqqqqqqqqqqqqqqqqqqqqqqj"MODE_DRAW_RESET);
+	print_canvas_border();
 }
 
 int menu_input(void){
@@ -45,7 +47,8 @@ void menu_actions(Point *points, Position *position, char choice) {
 
 	switch (choice) {
 	case 1:
-		CURSOR_UP(12);
+		CURSOR_UP(13);
+		CURSOR_LEFT(2);
 		printf("Draw With Symbols          \n");
 		print_symbol_menu();
 		while (input != ENTER) {
@@ -64,7 +67,8 @@ void menu_actions(Point *points, Position *position, char choice) {
 		}
 		break;
 	case 2:
-		CURSOR_UP(12);
+		CURSOR_UP(13);
+		CURSOR_LEFT(2);
 		printf("Foreground Color Select    \n");
 		print_color_menu();
 		while (input != ENTER) {
@@ -83,7 +87,8 @@ void menu_actions(Point *points, Position *position, char choice) {
 		}
 		break;
 	case 3:
-		CURSOR_UP(12);
+		CURSOR_UP(13);
+		CURSOR_LEFT(2);
 		printf("Background Color Select    \n");
 		print_color_menu();
 		while (input != ENTER) {
