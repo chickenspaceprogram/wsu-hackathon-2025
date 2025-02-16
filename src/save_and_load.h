@@ -11,6 +11,6 @@
 
 void load_file(FILE* file, Point* point, int len);
 
-void save_file(FILE* file, Point* point, int len);
+void save_file(FILE* outfile, Point* point, int len);
 
 #endif

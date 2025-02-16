@@ -1,4 +1,5 @@
 #include "save_and_load.h"
+#include <stdio.h>
 
 void load_file(FILE* file, Point* point, int len)
 {
@@ -9,21 +10,22 @@ void load_file(FILE* file, Point* point, int len)
 
 	while ((ch = getc(file)) != EOF)
 	{
-		ungetc(ch);
+		ungetc(ch, file);
 
 		fgets_resize(line, &size, file);
 
-		strcpy(point->background, strtok(line, " "));
-		strcpy(point->character, atoi(strtok(NULL, " ")));
-		strcpy(point->foreground, strtok(NULL, ","));
-		*point++;
+		point->background = atoi(strtok(line, " "));
+		point->character = atoi(strtok(NULL, " "));
+		point->foreground = atoi(strtok(NULL, ","));
+		point++;
 
+		length = 1;
 		while (length != len)
 		{
-			strcpy(point->background, strtok(NULL, " "));
-			strcpy(point->character, atoi(strtok(NULL, " ")));
-			strcpy(point->foreground, strtok(NULL, ","));
-			*point++;
+			point->background = atoi(strtok(NULL, " "));
+			point->character = atoi(strtok(NULL, " "));
+			point->foreground = atoi(strtok(NULL, ","));
+			point++;
 			length++;
 		}
 	}
@@ -31,9 +33,26 @@ void load_file(FILE* file, Point* point, int len)
 	free(line);
 }
 
-void save_file(FILE* file, Point* point, int len)
+void save_file(FILE* outfile, Point* point, int len)
 {
+	int x = 0;
+	int y = 0;
 
+	while (y < len)
+	{
+		x = 0;
+		while (x < len - 1)
+		{
 
+			fprintf(outfile, "%d %d %d,", point->background, point->character, point->foreground);
+			point++;
+			x++;
+
+		}
+		fprintf(outfile, "%d %d %d\n", point->background, point->character, point->foreground);
+		point++;
+		y++;
+	}
+	
 
 }

@@ -5,3 +5,5 @@ add_library(test-position position-test.h position-test.c)
 
 target_link_libraries(position PRIVATE ctty)
 target_link_libraries(test-position position)
+
+

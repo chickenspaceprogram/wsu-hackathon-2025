@@ -14,11 +14,31 @@ int main(void) {
     puts("my test");
 
     FILE* file = fopen("art.csv", "r");
+
+    if (file == NULL)
+    {
+        puts("skill issue");
+        return 1;
+    }
+
     Point art[5][5];
     int length = 0;
     length = 5;
 
     load_file(file, *art, length);
+
+    fclose(file);
+
+    FILE* outfile = fopen("art_save.csv", "w");
+
+    if (outfile == NULL) {
+        printf("skill issue");
+        return 1;
+    }
+
+    save_file(outfile, *art, length);
+
+    fclose(outfile);
 
     test_print_pixel();
     test_get_color_from_keypress();
