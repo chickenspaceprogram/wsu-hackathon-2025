@@ -1,7 +1,7 @@
 #include <stdio.h>
 //#include "colors.h"
-#include "draw.h";
-#include "draw.c";
+#include "draw.h"
+#include "draw.c"
 #include "hack_colors.h"
 #include "structs.h"
 #include "cetria_test.h"

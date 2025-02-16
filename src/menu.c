@@ -15,11 +15,6 @@ void displayMenu(void) {
 	printf("%c                     %c\n", 179, 179);
 
 	printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n", 192, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 217);
-
-
-	return 0;
-
-
 }
 
 int menu_input(void){
