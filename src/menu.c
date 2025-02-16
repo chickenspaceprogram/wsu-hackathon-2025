@@ -3,6 +3,8 @@
 #include "menu.h"
 #include "structs.h"
 #include <ctty/text-modes.h>
+#include "hack_menus.h"
+#include "hack_colors.h"
 
 void displayMenu(void) {
     puts(MODE_DRAW"lqqqqqqqqqqqqqqqqqqqqqk"MODE_DRAW_RESET);	
@@ -25,27 +27,46 @@ int menu_input(void){
 
 
 void menu_actions(char choice) {
+	FILE* inFile = NULL;
+	FILE* outFile = NULL;
+
 	switch (choice) {
 	case 1:
-		//run drawing function
+		printf("Draw With Symbols\n");
+		print_symbol_menu();
+		//navigation and printing
 		break;
 	case 2:
-		//color foreground
+		printf("Foreground Color Select\n");
+		print_color_menu();
+		//navigation and printing
 		break;
 	case 3:
-		//color background
+		printf("Background Color Select\n");
+		print_color_menu();
+		//navigation and printing
 		break;
 	case 4:
-		//save
+		outFile = fopen("art_save.csv", "w");
+		save_file(outFile, pixel, length);
+		fclose("outFile");
+		printf("Image Saved.\n\n");
+		system("pause");
 		break;
 	case 5:
-		//load
+		inFile = fopen("art.csv", "r");
+		load_file(inFile, pixel, length);
+		fclose(inFile);
+		printf("Loaded an image.\n\n");
+		system("pause");
 		break; 
 	case 6:
 		//help
 		break;
 	case 7:
-		//exit;
+		printf("Exiting...\n\n");
+		system("pause");
+		exit(0);
 		break;
 
 	}
