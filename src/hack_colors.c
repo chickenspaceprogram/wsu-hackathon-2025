@@ -54,10 +54,14 @@ int get_color_from_keypress(char symbol)
 }
 int get_symbol_from_keypress(char choice)
 {
-	int symbol = 0;
+	int symbol = -1;
 
 	switch (choice)
 	{
+	case '0':
+	{
+		symbol = 32;
+	}break;
 	case '1':
 	{
 		symbol = 176;
