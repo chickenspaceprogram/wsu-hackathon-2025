@@ -19,4 +19,4 @@ add_executable(hackathon
 
 target_link_libraries(hackathon PUBLIC ctty position test-position get-user-input)
 target_link_libraries(hackathon PUBLIC ctty position test-position)
-configure_file(out/build/x64-Debug/art.csv art.csv)
+

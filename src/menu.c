@@ -115,7 +115,9 @@ void menu_actions(Point *points, Position *position, char choice) {
         }
 		save_file(outFile, points, x_len, y_len);
 		fclose(outFile);
+		CURSOR_DOWN(14);
 		printf("Image Saved.\n\n");
+		CURSOR_UP(14);
         PAUSE();
         CLEAR_SCREEN();
 		break;
@@ -136,6 +138,7 @@ void menu_actions(Point *points, Position *position, char choice) {
 		print_all_points(points, NUM_ROWS, NUM_COLS);
 		break;
 	case 7:
+		CURSOR_DOWN(14);
 		printf("Exiting...\n\n");
         	PAUSE();
         	CLEAR_SCREEN();
