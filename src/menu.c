@@ -10,7 +10,7 @@
 #include "get-user-input.h"
 #include "position.h"
 
-#define NUM_ROWS 10
+#define NUM_COLS 20
 
 void displayMenu(void) {
     puts(MODE_DRAW"lqqqqqqqqqqqqqqqqqqqqqqqqqk"MODE_DRAW_RESET);	
@@ -54,6 +54,10 @@ void menu_actions(Point *points, Position *position, char choice) {
 				move_cursor(points, position, input);
 				break;
 			case CHARACTER:
+				points[(position->row - 1) * NUM_COLS + (position->col - 1)].character = get_symbol_from_keypress(chr);
+				printf(MODE_INVERSE);
+				print_at_position(points[(position->row - 1) * NUM_COLS + (position->col - 1)], position->row, position->col);
+				printf(MODE_INVERSE_RESET);
 				break;
 			}
 		}
@@ -69,9 +73,9 @@ void menu_actions(Point *points, Position *position, char choice) {
 				move_cursor(points, position, input);
 				break;
 			case CHARACTER:
-				points[(position->row - 1) * NUM_ROWS + (position->col - 1)].foreground = get_color_from_keypress(chr);
+				points[(position->row - 1) * NUM_COLS + (position->col - 1)].foreground = get_color_from_keypress(chr);
 				printf(MODE_INVERSE);
-				print_at_position(points[(position->row - 1) * NUM_ROWS + (position->col - 1)], position->row, position->col);
+				print_at_position(points[(position->row - 1) * NUM_COLS + (position->col - 1)], position->row, position->col);
 				printf(MODE_INVERSE_RESET);
 				break;
 			}
@@ -88,9 +92,9 @@ void menu_actions(Point *points, Position *position, char choice) {
 				move_cursor(points, position, input);
 				break;
 			case CHARACTER:
-				points[(position->row - 1) * NUM_ROWS + (position->col - 1)].background = get_color_from_keypress(chr);
+				points[(position->row - 1) * NUM_COLS + (position->col - 1)].background = get_color_from_keypress(chr);
 				printf(MODE_INVERSE);
-				print_at_position(points[(position->row - 1) * NUM_ROWS + (position->col - 1)], position->row, position->col);
+				print_at_position(points[(position->row - 1) * NUM_COLS + (position->col - 1)], position->row, position->col);
 				printf(MODE_INVERSE_RESET);
 				break;
 			}
