@@ -44,6 +44,8 @@ void menu_actions(Point *points, Position *position, char choice) {
 	FILE* outFile = NULL;
 	Input input = CHARACTER;
 	char chr = '\0';
+	int x_len = 20;
+	int y_len = 10;
 
 	switch (choice) {
 	case 1:
@@ -107,11 +109,11 @@ void menu_actions(Point *points, Position *position, char choice) {
 		}
 		break;
 	case 4:
-		outFile = fopen("art_save.csv", "w");
+		outFile = fopen("art.csv", "w");
         if (outFile == NULL) {
             puts("we are dumb"); exit(1);
         }
-		//save_file(outFile, pixel, length);
+		save_file(outFile, points, x_len, y_len);
 		fclose(outFile);
 		printf("Image Saved.\n\n");
         PAUSE();
@@ -122,7 +124,7 @@ void menu_actions(Point *points, Position *position, char choice) {
         if (inFile == NULL) {
             puts("we are dumb"); exit(1);
         }
-		//load_file(inFile, pixel, length);
+		load_file(inFile, points, x_len);
 		fclose(inFile);
 		printf("Loaded an image.\n\n");
         PAUSE();
