@@ -77,12 +77,12 @@ void menu_actions(char choice) {
         CLEAR_SCREEN();
 		break; 
 	case 6:
-		//print_help();
+		system("cls");
+		print_help();
+		system("cls");
 		break;
 	case 7:
 		printf("Exiting...\n\n");
-        PAUSE();
-        CLEAR_SCREEN();
 		exit(0);
 		break;
 

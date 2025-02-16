@@ -1,5 +1,5 @@
 #include <stdio.h>
-//#include "colors.h"
+#include "menu.c"
 #include "draw.h"
 #include "draw.c"
 #include "hack_colors.h"
@@ -17,8 +17,6 @@ int main(void) {
         menu_actions(option_choice); //contains all other functions
 
     } while (keep_running == 1);
-
-    print_help();
 
     return 0;
 }
