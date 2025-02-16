@@ -64,3 +64,16 @@ void print_color_menu() {
 }
 
 #endif
+
+void print_help(void)
+{
+	printf("This is a program that allows you to draw and color using ASCII characters.\n\n\n");
+	printf("Select \"Draw\" to place ASCII symbols into the drawing.\nSimply hover over the space you wish to place it, and press the corresponding key.\n\n");
+	printf("Select \"Color Foreground\" to change the color of the symbol that is currently occupying a space.\nHover over the space whose symbol you wish to color, and press the corresponding key.\n\n");
+	printf("Select \"Color Background\" to change the color of the background at the current space.\n Hover over the space whose background you wish to change, and press the corresponding key.\n\n");
+	printf("Select \"Save\" to save your drawing to a .csv file.\n\n");
+	printf("Select \"Load\" to load a drawing from a .csv file.\n\n");
+	printf("Select \"Help\" to view instructions.\n\n");
+	printf("Select \"Exit\" to exit the program.\n\n\n");
+	system("pause");
+}

@@ -7,5 +7,6 @@
 
 void print_symbol_menu(void);
 void print_color_menu(void);
+void print_help(void);
 
 #endif

@@ -14,6 +14,8 @@ int main(void) {
 
     } while (keep_running == 1);
 
+    print_help();
+
     return 0;
 }
 
