@@ -1,7 +1,7 @@
 #include "save_and_load.h"
 #include <stdio.h>
 
-void load_file(FILE* file, Point* point, int len)
+void load_file(FILE* file, Point* point, int x_len)
 {
 	char* line = malloc(128 * sizeof(char));
 	size_t size = 128;
@@ -12,7 +12,7 @@ void load_file(FILE* file, Point* point, int len)
 	{
 		ungetc(ch, file);
 
-		fgets_resize(line, &size, file);
+		line = fgets_resize(line, &size, file);
 
 		point->background = atoi(strtok(line, " "));
 		point->character = atoi(strtok(NULL, " "));
@@ -20,7 +20,7 @@ void load_file(FILE* file, Point* point, int len)
 		point++;
 
 		length = 1;
-		while (length != len)
+		while (length < x_len)
 		{
 			point->background = atoi(strtok(NULL, " "));
 			point->character = atoi(strtok(NULL, " "));
@@ -28,20 +28,21 @@ void load_file(FILE* file, Point* point, int len)
 			point++;
 			length++;
 		}
+
 	}
 
 	free(line);
 }
 
-void save_file(FILE* outfile, Point* point, int len)
+void save_file(FILE* outfile, Point* point, int x_len, int y_len)
 {
 	int x = 0;
 	int y = 0;
 
-	while (y < len)
+	while (y < y_len)
 	{
 		x = 0;
-		while (x < len - 1)
+		while (x < x_len - 1)
 		{
 
 			fprintf(outfile, "%d %d %d,", point->background, point->character, point->foreground);
