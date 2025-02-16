@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "hack_colors.h"
+#include "hack_menus.h"
 #include "structs.h"
 
 int main(void) {
@@ -8,9 +9,6 @@ int main(void) {
     puts("This is Sydnee :)");
     puts("This is Bakenflake");
 
-    puts("my test");
-
-    test_swap_fore_back_menu();
     print_symbol_menu();
     print_color_menu();
 }

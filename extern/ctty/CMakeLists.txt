@@ -16,7 +16,6 @@ set(CTTY_HEADER_LIST
     "${ctty_SOURCE_DIR}/include/ctty/menu.h"
     "${ctty_SOURCE_DIR}/include/ctty/screen.h"
     "${ctty_SOURCE_DIR}/include/ctty/text-modes.h"
-    "${ctty_SOURCE_DIR}/include/ctty/view-file.h"
 )
 
 add_subdirectory(src)
