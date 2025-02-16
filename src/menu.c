@@ -88,7 +88,7 @@ void menu_actions(Point *points, Position *position, char choice) {
 				move_cursor(points, position, input);
 				break;
 			case CHARACTER:
-				points[(position->row - 1) * NUM_ROWS + (position->col - 1)].background = get_color_from_keypress(chr) + 10;
+				points[(position->row - 1) * NUM_ROWS + (position->col - 1)].background = get_color_from_keypress(chr);
 				printf(MODE_INVERSE);
 				print_at_position(points[(position->row - 1) * NUM_ROWS + (position->col - 1)], position->row, position->col);
 				printf(MODE_INVERSE_RESET);
