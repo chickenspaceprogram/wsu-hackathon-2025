@@ -1,27 +1,37 @@
-#include "stdio.h"
-#include "colors.h"
-#include "string.h"
-#include "stdlib.h"
 #include "save_and_load.h"
-#include "structs.h"
 
-
-load_file(FILE* file, Point* point, int len)
+void load_file(FILE* file, Point* point, int len)
 {
-	char line[100];
+	char* line = malloc(128 * sizeof(char));
+	size_t size = 128;
+	int ch = 0;
+	int length = 1;
 
-	while (file != NULL)
+	while ((ch = getc(file)) != EOF)
 	{
-		while(line)
-		fgets(line, 100, file);
+		ungetc(ch);
+
+		fgets_resize(line, &size, file);
+
 		strcpy(point->background, strtok(line, " "));
 		strcpy(point->character, atoi(strtok(NULL, " ")));
 		strcpy(point->foreground, strtok(NULL, ","));
+		*point++;
+
+		while (length != len)
+		{
+			strcpy(point->background, strtok(NULL, " "));
+			strcpy(point->character, atoi(strtok(NULL, " ")));
+			strcpy(point->foreground, strtok(NULL, ","));
+			*point++;
+			length++;
+		}
 	}
 
+	free(line);
 }
 
-save_file(FILE* file, Point* point, int len)
+void save_file(FILE* file, Point* point, int len)
 {
 
 
