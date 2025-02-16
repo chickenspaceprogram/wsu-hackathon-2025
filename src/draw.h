@@ -7,14 +7,18 @@
 
 #include "structs.h"
 #include <stdio.h>
+#include <ctty/cursor.h>
+
+
 
 Point* make_array(int rows, int columns); 
 
 void initialize_array(Point* canvas, int rows, int columns);
 
 char get_input(void);
-
-//send result of get_input to valid_char
-int valid_char(char input);
-
-//if valid character, save char to array of struct points
+//
+////send result of get_input to valid_char
+//int valid_char(char input);
+//
+////if valid character, save char to array of struct points
+//void* assign_chars(Point* canvas, char user_char);

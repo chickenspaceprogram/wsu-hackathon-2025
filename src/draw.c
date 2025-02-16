@@ -1,6 +1,7 @@
 #include "draw.h"
 #include "stdlib.h"
 
+
 Point* make_array(int rows, int columns) {
 	//canvas array of points
 	Point* canvas = (Point*)malloc(sizeof(Point) * rows * columns);
@@ -22,7 +23,6 @@ void initialize_array(Point* canvas, int rows, int columns) {
 		canvas->character = ' ';
 		canvas->foreground = DEFAULT;
 		
-
 		canvas++; //move to next pixel
 		i++; //move right one in row
 
@@ -41,16 +41,22 @@ char get_input(void) {
 	return user_char;
 }
 
-int valid_char(char input) {
-	int valid = 0;
-	if (input!= 'ESC')//insure input is not esc sequences or arrows
-		return 0;
-	else {
-		return 1; //return 1 for valid
+//int valid_char(char input) {
+//	int valid = 0;
+//	if (input!= 27 || input != 224|| input!= 72||input!=80|| input!= 75|| input!=77)//insure input is not esc sequences or arrows
+//		//an esc key or arrow keys were inputted
+//		return 0;
+//	else {
+//		return 1; //return 1 for valid
+//		//assign to 176-178, 219-223, 233, 254
+//	}
+//}
+//
+////if valid_char returns 1
+//void* assign_chars(Point* canvas, Position* location, char user_char){
+//	//apply user_char to canvas position
+//}
 
-		//assign to 176-178, 219-223, 233, 254
-	}
-}
 
 
 
