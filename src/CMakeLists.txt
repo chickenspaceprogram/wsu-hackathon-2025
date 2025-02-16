@@ -8,3 +8,5 @@ add_library(get-user-input get-user-input.c get-user-input.h)
 target_link_libraries(position PRIVATE ctty)
 target_link_libraries(get-user-input PRIVATE ctty)
 target_link_libraries(test-position position)
+
+
