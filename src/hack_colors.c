@@ -12,41 +12,41 @@ void print_pixel(Point visual)
 }
 int get_color_from_keypress(char symbol)
 {
-	int color = 39;
+	int color = DEFAULT;
 
 	switch (symbol)
 	{
 	case '1':
 	{
-		color = 30;
+		color = BLACK;
 	}break;
 	case '2':
 	{
-		color = 31;
+		color = RED;
 	}break;
 	case '3':
 	{
-		color = 32;
+		color = GREEN;
 	}break;
 	case '4':
 	{
-		color = 33;
+		color = YELLOW;
 	}break;
 	case '5':
 	{
-		color = 34;
+		color = BLUE;
 	}break;
 	case '6':
 	{
-		color = 35;
+		color = PURPLE;
 	}break;
 	case '7':
 	{
-		color = 36;
+		color = CYAN;
 	}break;
 	case '8':
 	{
-		color = 37;
+		color = WHITE;
 	}break;
 	}
 
