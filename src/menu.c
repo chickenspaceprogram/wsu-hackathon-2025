@@ -125,6 +125,8 @@ void menu_actions(Point *points, Position *position, char choice) {
 		break;
 	case 7:
 		printf("Exiting...\n\n");
+        	PAUSE();
+        	CLEAR_SCREEN();
 		exit(0);
 		break;
 
