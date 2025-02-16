@@ -2,19 +2,19 @@
 #include <stdio.h>
 #include "menu.h"
 #include "structs.h"
+#include <ctty/text-modes.h>
 
 void displayMenu(void) {
-	
-	printf("%c     Main Menu:      %c\n", 179, 179);
-	printf("%c                     %c\n", 179, 179);
-	printf("%c      1. Draw        %c\n", 179, 179);
-	printf("%c      2. Save        %c\n", 179, 179);
-	printf("%c      3. Load        %c\n", 179, 179);
-	printf("%c      4. Help        %c\n", 179, 179);
-	printf("%c      5. Exit        %c\n", 179, 179);
-	printf("%c                     %c\n", 179, 179);
-
-	printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n", 192, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 217);
+    puts(MODE_DRAW"lqqqqqqqqqqqqqqqqqqqqqk"MODE_DRAW_RESET);	
+	puts(MODE_DRAW"x"MODE_DRAW_RESET"     Main Menu:      "MODE_DRAW"x"MODE_DRAW_RESET);
+	puts(MODE_DRAW"x"MODE_DRAW_RESET"                     "MODE_DRAW"x"MODE_DRAW_RESET);
+	puts(MODE_DRAW"x"MODE_DRAW_RESET"      1. Draw        "MODE_DRAW"x"MODE_DRAW_RESET);
+	puts(MODE_DRAW"x"MODE_DRAW_RESET"      2. Save        "MODE_DRAW"x"MODE_DRAW_RESET);
+	puts(MODE_DRAW"x"MODE_DRAW_RESET"      3. Load        "MODE_DRAW"x"MODE_DRAW_RESET);
+	puts(MODE_DRAW"x"MODE_DRAW_RESET"      4. Help        "MODE_DRAW"x"MODE_DRAW_RESET);
+	puts(MODE_DRAW"x"MODE_DRAW_RESET"      5. Exit        "MODE_DRAW"x"MODE_DRAW_RESET);
+	puts(MODE_DRAW"x"MODE_DRAW_RESET"                     "MODE_DRAW"x"MODE_DRAW_RESET);
+    puts(MODE_DRAW"mqqqqqqqqqqqqqqqqqqqqqj"MODE_DRAW_RESET);
 }
 
 int menu_input(void){
