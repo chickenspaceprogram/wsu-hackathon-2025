@@ -31,7 +31,7 @@ void test_print_pixel(void)
 void test_get_color_from_keypress(void)
 {
 	int color = 0;
-	printf("\nTesting get_color_from_keypress():\nExpected: 39 31 33 35 37\n");
+	printf("\nTesting get_color_from_keypress():\nExpected: 30 32 34 36 37\n");
 	printf("Actual: ");
 	color = get_color_from_keypress('1');
 	printf("%d", color);
@@ -45,7 +45,7 @@ void test_get_color_from_keypress(void)
 	color = get_color_from_keypress('7');
 	printf("%d", color);
 	putchar(' ');
-	color = get_color_from_keypress('9');
+	color = get_color_from_keypress('8');
 	printf("%d", color);
 	putchar('\n');
 }

@@ -18,37 +18,33 @@ int get_color_from_keypress(char symbol)
 	{
 	case '1':
 	{
-		color = 39;
+		color = 30;
 	}break;
 	case '2':
 	{
-		color = 30;
+		color = 31;
 	}break;
 	case '3':
 	{
-		color = 31;
+		color = 32;
 	}break;
 	case '4':
 	{
-		color = 32;
+		color = 33;
 	}break;
 	case '5':
 	{
-		color = 33;
+		color = 34;
 	}break;
 	case '6':
 	{
-		color = 34;
+		color = 35;
 	}break;
 	case '7':
 	{
-		color = 35;
-	}break;
-	case '8':
-	{
 		color = 36;
 	}break;
-	case '9':
+	case '8':
 	{
 		color = 37;
 	}break;
