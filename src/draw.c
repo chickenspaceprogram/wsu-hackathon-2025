@@ -31,7 +31,7 @@ void initialize_array(Point* canvas, int rows, int columns) {
 			i = 0;
 		}
 
-	} while (i<=rows&&j<=columns); //set to default until last pixel reached
+	} while (i<rows&&j<columns); //set to default until last pixel reached
 }
 
 char get_input(void) {
