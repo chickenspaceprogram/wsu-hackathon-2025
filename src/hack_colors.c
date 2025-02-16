@@ -52,6 +52,52 @@ int get_color_from_keypress(char symbol)
 
 	return color;
 }
+int get_symbol_from_keypress(char choice)
+{
+	int symbol = 0;
+
+	switch (choice)
+	{
+	case '1':
+	{
+		symbol = 176;
+	}break;
+	case '2':
+	{
+		symbol = 177;
+	}break;
+	case '3':
+	{
+		symbol = 178;
+	}break;
+	case '4':
+	{
+		symbol = 219;
+	}break;
+	case '5':
+	{
+		symbol = 220;
+	}break;
+	case '6':
+	{
+		symbol = 221;
+	}break;
+	case '7':
+	{
+		symbol = 222;
+	}break;
+	case '8':
+	{
+		symbol = 223;
+	}break;
+	case '9':
+	{
+		symbol = 254;
+	}break;
+	}
+
+	return symbol;
+}
 void convert_color_to_string(int color, char* string)
 {
 	switch (color)
