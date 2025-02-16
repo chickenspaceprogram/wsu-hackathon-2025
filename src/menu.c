@@ -10,6 +10,7 @@
 #include "get-user-input.h"
 #include "position.h"
 
+#define NUM_ROWS 10
 #define NUM_COLS 20
 
 void displayMenu(void) {
@@ -123,9 +124,11 @@ void menu_actions(Point *points, Position *position, char choice) {
         CLEAR_SCREEN();
 		break; 
 	case 6:
-		system("cls");
+		CLEAR_SCREEN();
 		print_help();
-		system("cls");
+		CLEAR_SCREEN();
+		displayMenu();
+		print_all_points(points, NUM_ROWS, NUM_COLS);
 		break;
 	case 7:
 		printf("Exiting...\n\n");
