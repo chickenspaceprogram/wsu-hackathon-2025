@@ -1,6 +1,7 @@
 #include "colors.h"
+#include "structs.h"
 
-print_pixel_in_color(Pixel symbol, Position index)
+print_pixel_in_color(Point symbol, Position index)
 {
 
 }
