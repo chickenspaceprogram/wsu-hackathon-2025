@@ -6,6 +6,7 @@
 #include "hack_menus.h"
 #include "hack_colors.h"
 #include "save_and_load.h"
+#include <ctty/screen.h>
 
 void displayMenu(void) {
     puts(MODE_DRAW"lqqqqqqqqqqqqqqqqqqqqqqqqqk"MODE_DRAW_RESET);	
@@ -24,7 +25,9 @@ void displayMenu(void) {
 
 int menu_input(void){
 	int choice = 0;
-	scanf("%d", &choice);
+	do {
+		choice = GETCH() - '0';
+	} while (choice < 1 || choice > 7);
 	return choice;
 }
 
@@ -48,28 +51,41 @@ void menu_actions(char choice) {
 		printf("Background Color Select\n");
 		print_color_menu();
 		//navigation and printing
+        PAUSE();
+        CLEAR_SCREEN();
 		break;
 	case 4:
 		outFile = fopen("art_save.csv", "w");
+        if (outFile == NULL) {
+            puts("we are dumb"); exit(1);
+        }
 		//save_file(outFile, pixel, length);
-		fclose("outFile");
+		fclose(outFile);
 		printf("Image Saved.\n\n");
-		system("pause");
+        PAUSE();
+        CLEAR_SCREEN();
 		break;
 	case 5:
 		inFile = fopen("art.csv", "r");
+        if (inFile == NULL) {
+            puts("we are dumb"); exit(1);
+        }
 		//load_file(inFile, pixel, length);
 		fclose(inFile);
 		printf("Loaded an image.\n\n");
-		system("pause");
+        PAUSE();
+        CLEAR_SCREEN();
 		break; 
 	case 6:
+		//print_help();
 		system("cls");
 		print_help();
 		system("cls");
 		break;
 	case 7:
 		printf("Exiting...\n\n");
+        PAUSE();
+        CLEAR_SCREEN();
 		exit(0);
 		break;
 

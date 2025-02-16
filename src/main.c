@@ -3,7 +3,9 @@
 #include "draw.h"
 #include "draw.c"
 #include "hack_colors.h"
+#include "hack_menus.h"
 #include "save_and_load.h"
+#include "menu.h"
 
 int main(void) {
     int keep_running = 1, option_choice = 0;
