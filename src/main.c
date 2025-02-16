@@ -9,6 +9,7 @@
 #include <ctty/text-modes.h>
 
 int main(void) {
+    printf(CURSOR_OFF);
     int keep_running = 1, option_choice = 0;
     displayMenu();
     Point *pts = make_array(10, 20);

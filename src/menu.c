@@ -126,9 +126,7 @@ void menu_actions(Point *points, Position *position, char choice) {
         }
 		load_file(inFile, points, x_len);
 		fclose(inFile);
-		printf("Loaded an image.\n\n");
-        PAUSE();
-        CLEAR_SCREEN();
+		print_all_points(points, NUM_ROWS, NUM_COLS);
 		break; 
 	case 6:
 		CLEAR_SCREEN();
