@@ -1,3 +1,3 @@
 #pragma once
-
-void print_at_position(int row, int col);
+#include "structs.h"
+void print_at_position(Point point, int row, int col);

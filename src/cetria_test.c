@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 #include "structs.h"
 #include "hack_colors.h"
 
