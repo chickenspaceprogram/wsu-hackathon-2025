@@ -16,7 +16,7 @@ typedef enum
 } Color;
 
 typedef struct point {
-    char character;
+    int character;
     Color foreground;
     Color background;
 } Point;
