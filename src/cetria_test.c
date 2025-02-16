@@ -95,3 +95,15 @@ void test_convert_string_to_color(void)
 	color = convert_string_to_color("WHITE");
 	printf("Expected: 37\tActual: %d\n", color);
 }
+void test_swap_fore_back_menu(void)
+{
+	int fore_back = 0;
+
+	printf("\nTesting test_swap_fore_back_menu():\n\nExpected: Foreground Color Picker\nActual:   ");
+
+	swap_fore_back_menu(fore_back);
+	printf("Expected: Background Color Picker\nActual:   ");
+	fore_back = 1;
+	swap_fore_back_menu(fore_back);
+	putchar('\n');
+}
