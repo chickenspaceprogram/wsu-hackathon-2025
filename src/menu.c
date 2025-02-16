@@ -7,16 +7,18 @@
 #include "hack_colors.h"
 
 void displayMenu(void) {
-    puts(MODE_DRAW"lqqqqqqqqqqqqqqqqqqqqqk"MODE_DRAW_RESET);	
-	puts(MODE_DRAW"x"MODE_DRAW_RESET"     Main Menu:      "MODE_DRAW"x"MODE_DRAW_RESET);
-	puts(MODE_DRAW"x"MODE_DRAW_RESET"                     "MODE_DRAW"x"MODE_DRAW_RESET);
-	puts(MODE_DRAW"x"MODE_DRAW_RESET"      1. Draw        "MODE_DRAW"x"MODE_DRAW_RESET);
-	puts(MODE_DRAW"x"MODE_DRAW_RESET"      2. Save        "MODE_DRAW"x"MODE_DRAW_RESET);
-	puts(MODE_DRAW"x"MODE_DRAW_RESET"      3. Load        "MODE_DRAW"x"MODE_DRAW_RESET);
-	puts(MODE_DRAW"x"MODE_DRAW_RESET"      4. Help        "MODE_DRAW"x"MODE_DRAW_RESET);
-	puts(MODE_DRAW"x"MODE_DRAW_RESET"      5. Exit        "MODE_DRAW"x"MODE_DRAW_RESET);
-	puts(MODE_DRAW"x"MODE_DRAW_RESET"                     "MODE_DRAW"x"MODE_DRAW_RESET);
-    puts(MODE_DRAW"mqqqqqqqqqqqqqqqqqqqqqj"MODE_DRAW_RESET);
+    puts(MODE_DRAW"lqqqqqqqqqqqqqqqqqqqqqqqqqk"MODE_DRAW_RESET);	
+	puts(MODE_DRAW"x"MODE_DRAW_RESET"       Main Menu:        "MODE_DRAW"x"MODE_DRAW_RESET);
+	puts(MODE_DRAW"x"MODE_DRAW_RESET"                         "MODE_DRAW"x"MODE_DRAW_RESET);
+	puts(MODE_DRAW"x"MODE_DRAW_RESET"   1. Draw               "MODE_DRAW"x"MODE_DRAW_RESET);
+	puts(MODE_DRAW"x"MODE_DRAW_RESET"   2. Color Foreground   "MODE_DRAW"x"MODE_DRAW_RESET);
+	puts(MODE_DRAW"x"MODE_DRAW_RESET"   3. Color Background   "MODE_DRAW"x"MODE_DRAW_RESET);
+	puts(MODE_DRAW"x"MODE_DRAW_RESET"   4. Save               "MODE_DRAW"x"MODE_DRAW_RESET);
+	puts(MODE_DRAW"x"MODE_DRAW_RESET"   5. Load               "MODE_DRAW"x"MODE_DRAW_RESET);
+	puts(MODE_DRAW"x"MODE_DRAW_RESET"   6. Help               "MODE_DRAW"x"MODE_DRAW_RESET);
+	puts(MODE_DRAW"x"MODE_DRAW_RESET"   7. Exit               "MODE_DRAW"x"MODE_DRAW_RESET);
+	puts(MODE_DRAW"x"MODE_DRAW_RESET"                         "MODE_DRAW"x"MODE_DRAW_RESET);
+    puts(MODE_DRAW"mqqqqqqqqqqqqqqqqqqqqqqqqqj"MODE_DRAW_RESET);
 }
 
 int menu_input(void){
