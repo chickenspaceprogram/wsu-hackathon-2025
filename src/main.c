@@ -13,5 +13,5 @@ int main(void) {
     test_print_pixel();
     test_get_color_from_keypress();
     test_convert_color_to_string();
-    //test_convert_string_to_color();
+    test_convert_string_to_color();
 }

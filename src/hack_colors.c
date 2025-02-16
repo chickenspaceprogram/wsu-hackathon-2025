@@ -104,7 +104,7 @@ void convert_color_to_string(int color, char* string)
 	}break;
 	}
 }
-int convert_string_to_color(char string)
+int convert_string_to_color(char *string)
 {
 	int color = 39;
 

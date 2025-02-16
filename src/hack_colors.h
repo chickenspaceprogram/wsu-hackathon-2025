@@ -6,6 +6,6 @@
 void print_pixel(Point visual);
 int get_color_from_keypress(char symbol);
 void convert_color_to_string(int color, char* string);
-int convert_string_to_color(char string);
+int convert_string_to_color(char *string);
 
 #endif
