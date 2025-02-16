@@ -7,7 +7,7 @@ add_library(ctty
     keyselect.c
     menu.c
     screen.c
-    view-file.c
+    
     ${CTTY_HEADER_LIST}
 )
 

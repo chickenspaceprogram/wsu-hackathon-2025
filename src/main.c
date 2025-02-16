@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include "colors.h"
+#include "hack_colors.h"
+#include "structs.h"
 
 int main(void) {
     puts("Hello, World!");
@@ -8,4 +9,9 @@ int main(void) {
     puts("This is Bakenflake");
 
     puts("my test");
+
+    test_print_pixel();
+    test_get_color_from_keypress();
+    test_convert_color_to_string();
+    test_convert_string_to_color();
 }
