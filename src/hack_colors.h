@@ -1,7 +1,10 @@
-#ifndef COLORS_H
-#define COLORS_H
+#ifndef HACK_COLORS_H
+#define HACK_COLORS_H
 #define _CRT_SECURE_NO_WARNINGS
 #include "structs.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 
 void print_pixel(Point visual);
 int get_color_from_keypress(char symbol);

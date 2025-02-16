@@ -14,6 +14,10 @@ add_subdirectory(src)
 
 add_executable(hackathon
     src/main.c
- "src/hack_colors.h" "src/hack_colors.c" "src/structs.h" "src/cetria_test.c" "src/cetria_test.h")
+ "src/hack_colors.h" "src/hack_colors.c" "src/structs.h" "src/cetria_test.c" "src/cetria_test.h" "src/save_and_load.h" "src/save_and_load.c"
+"src/fgets-resize.c" "src/fgets-resize.h" "src/hack_menus.c" "src/hack_menus.h")
 
+target_link_libraries(hackathon PUBLIC ctty position test-position get-user-input)
 target_link_libraries(hackathon PUBLIC ctty position test-position)
+configure_file(src/art.csv art.csv)
+configure_file(src/art_save.csv art_save.csv)
